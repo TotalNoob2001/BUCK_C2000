@@ -1,0 +1,75 @@
+/*
+ * claTasks.cla
+ *
+ *  Created on: 14 Nov 2024
+ *      Author: Erik
+ */
+
+#include <claTasks.h>
+#include <sharedData.h>
+
+void PIreg_Func(ts_PIreg *reg)
+{
+    // Regulator error equation
+    reg->e[0] = reg->ref - reg->meas;
+    // Proportional gain equation
+    reg->up = reg->Kp * reg->e[0];
+    // Integrated gain equation
+    reg->ui[0] = (reg->e[0] + reg->e[1]) * reg->Ki * reg->w + reg->ui[1];
+    // Active variable equation
+    reg->u = reg->ui[0] + reg->up;
+    // Shift results
+    reg->e[1] = reg->e[0];
+    reg->ui[1] = reg->ui[0];
+
+    // Max/Min barriers condition
+    if (reg->u > reg->Umax)
+    {
+        reg->out = reg->Umin;
+    }
+    else
+    {
+        if (reg->u < reg->Umin)
+            reg->out = reg->Umin;
+        else
+            reg->out = reg->u;
+    }
+
+    // Anti-windup setting
+    if (reg->u == reg->out)
+        reg->w = 1.0;
+    else
+        reg->w = 0.0;
+}
+
+void PIreg_Init(ts_PIreg *reg, float32 Kp, float32 Ki, float32 max, float32 min)
+{
+    reg->Kp = Kp;
+    reg->Ki = Ki;
+    reg->Umax = max;
+    reg->Umin = min;
+
+    reg->w = 1.0;
+    reg->e[1] = 0.0;
+    reg->ui[1] = 0.0;
+}
+
+// CLA tasks definition
+__interrupt void claTask1(void)
+{
+    Vout = K_fbVout * ADC_LSB * ((float32) AdccResultRegs.ADCRESULT0);
+    Vin = K_fbVin * ADC_LSB * ((float32) AdccResultRegs.ADCRESULT1);
+
+    voltage_PIreg.meas = Vout;
+    PIreg_Func(&voltage_PIreg);
+    EPwm1Regs.CMPA.bit.CMPA = voltage_PIreg.out;
+}
+
+__interrupt void claTask8(void)
+{
+    PIreg_Init(&voltage_PIreg, 60, 0.6, 125, 1);
+    voltage_PIreg.ref = 1.2;
+
+    // Software breakpoint for CLA core
+    __mdebugstop();
+}

@@ -69,7 +69,8 @@ main.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/include
 main.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/adcs.h
 main.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/cmps.h
 main.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/pwms.h
-main.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/PI_reg.h
+main.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/sharedData.h
+main.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/claTasks.h
 
 ../main.c:
 
@@ -209,5 +210,7 @@ E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/cmps.h:
 
 E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/pwms.h:
 
-E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/PI_reg.h:
+E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/sharedData.h:
+
+E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/claTasks.h:
 

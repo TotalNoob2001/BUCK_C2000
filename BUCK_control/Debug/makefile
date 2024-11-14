@@ -10,7 +10,9 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./claTasks.obj" \
 "./main.obj" \
+"./sharedData.obj" \
 "./Device/f28004x_adc.obj" \
 "./Device/f28004x_codestartbranch.obj" \
 "./Device/f28004x_globalvariabledefs.obj" \
@@ -18,13 +20,12 @@ ORDERED_OBJS += \
 "./Device/f28004x_pievect.obj" \
 "./Device/f28004x_sysctrl.obj" \
 "./Device/f28004x_usdelay.obj" \
-"./Source/PI_reg.obj" \
 "./Source/adcs.obj" \
 "./Source/cmps.obj" \
 "./Source/pwms.obj" \
 "./Source/timers.obj" \
-"../280049C_RAM_lnk.cmd" \
 "../f28004x_headers_nonbios.cmd" \
+"../Device/28004x_cla_ram_lnk.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
 
@@ -158,8 +159,9 @@ BUCK_github.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "Device\f28004x_adc.obj" "Device\f28004x_codestartbranch.obj" "Device\f28004x_globalvariabledefs.obj" "Device\f28004x_piectrl.obj" "Device\f28004x_pievect.obj" "Device\f28004x_sysctrl.obj" "Device\f28004x_usdelay.obj" "Source\PI_reg.obj" "Source\adcs.obj" "Source\cmps.obj" "Source\pwms.obj" "Source\timers.obj" 
-	-$(RM) "main.d" "Device\f28004x_adc.d" "Device\f28004x_globalvariabledefs.d" "Device\f28004x_piectrl.d" "Device\f28004x_pievect.d" "Device\f28004x_sysctrl.d" "Source\PI_reg.d" "Source\adcs.d" "Source\cmps.d" "Source\pwms.d" "Source\timers.d" 
+	-$(RM) "claTasks.obj" "main.obj" "sharedData.obj" "Device\f28004x_adc.obj" "Device\f28004x_codestartbranch.obj" "Device\f28004x_globalvariabledefs.obj" "Device\f28004x_piectrl.obj" "Device\f28004x_pievect.obj" "Device\f28004x_sysctrl.obj" "Device\f28004x_usdelay.obj" "Source\adcs.obj" "Source\cmps.obj" "Source\pwms.obj" "Source\timers.obj" 
+	-$(RM) "main.d" "sharedData.d" "Device\f28004x_adc.d" "Device\f28004x_globalvariabledefs.d" "Device\f28004x_piectrl.d" "Device\f28004x_pievect.d" "Device\f28004x_sysctrl.d" "Source\adcs.d" "Source\cmps.d" "Source\pwms.d" "Source\timers.d" 
+	-$(RM) "claTasks.d" 
 	-$(RM) "Device\f28004x_codestartbranch.d" "Device\f28004x_usdelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '

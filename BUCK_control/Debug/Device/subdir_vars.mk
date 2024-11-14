@@ -5,6 +5,9 @@
 SHELL = cmd.exe
 
 # Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../Device/28004x_cla_ram_lnk.cmd 
+
 ASM_SRCS += \
 ../Device/f28004x_codestartbranch.asm \
 ../Device/f28004x_usdelay.asm 

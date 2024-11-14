@@ -29,7 +29,7 @@ void ADCC_Init(void)
     SetVREF(ADC_ADCC, ADC_EXTERNAL, ADC_VREF3P3);
 
     EALLOW;
-    AdccRegs.ADCINTSEL1N2.bit.INT1SEL = 0;
+    AdccRegs.ADCINTSEL1N2.bit.INT1SEL = 1;
     AdccRegs.ADCINTSEL1N2.bit.INT1E = 1;
     AdccRegs.ADCINTSEL1N2.bit.INT1CONT = 1;
 

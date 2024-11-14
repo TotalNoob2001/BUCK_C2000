@@ -2,23 +2,20 @@
 #include <adcs.h>
 #include <cmps.h>
 #include <pwms.h>
-#include <PI_reg.h>
+#include <sharedData.h>
+#include <claTasks.h>
 
 // Constants for shunt resistors
 #define ADC_LSB 0.000805664f
-#define K_fbVin 4.030903f
-#define K_fbVout 2.02977f
-#define K_fbVoutAlt 3.06122f
 #define K_fbIl 2.2782f
 
-Uint16 dutyPWM1 = 25;
-float32 current_L_A3 = 0.0;     // ADC result for inductor current
-float32 voltage_Vout_C3 = 0.0;  // ADC result for output voltage
-float32 voltage_Vin_C5 = 0.0;   // ADC result for input voltage
+float32 current_L_A3 = 0.0;
+extern float32 Vin;
+extern float32 Vout;
 
 void ePWM1_Init(void);
-__interrupt void adca_prerusenie(void);
-__interrupt void adcc_prerusenie(void);
+extern __interrupt void adca_prerusenie(void);
+extern __interrupt void adcc_prerusenie(void);
 __interrupt void pwm1_TZ_interrupt(void);
 
 int main(void)
@@ -32,6 +29,23 @@ int main(void)
     // Allow access to protected registers
     EALLOW;
 
+    // LCA initialization
+    MemCfgRegs.LSxMSEL.bit.MSEL_LS0 = 1; // Sets shared access CLA and CPU to memory
+    MemCfgRegs.LSxMSEL.bit.MSEL_LS1 = 1;
+    MemCfgRegs.LSxMSEL.bit.MSEL_LS2 = 1;
+    MemCfgRegs.LSxCLAPGM.bit.CLAPGM_LS0 = 1; // Sets RAMLS0 as RAM program for CLA
+    MemCfgRegs.LSxCLAPGM.bit.CLAPGM_LS1 = 0;  // Sets RAMLS1 as RAM data for CLA
+    MemCfgRegs.LSxCLAPGM.bit.CLAPGM_LS2 = 0;  // Sets RAMLS2 as RAM data for CLA
+#pragma diag_suppres 770    // Warnings elimination
+    Cla1Regs.MVECT1 = (uint16_t) &claTask1;
+    Cla1Regs.MVECT8 = (uint16_t) &claTask8;
+#pragma diag_default 770
+    DmaClaSrcSelRegs.CLA1TASKSRCSEL1.bit.TASK1 = 11;
+    Cla1Regs.MCTL.bit.IACKE = 1;
+    Cla1Regs.MIER.bit.INT1 = 1;
+    Cla1Regs.MIER.bit.INT8 = 1;
+    Cla1Regs.MIFRC.bit.INT8 = 1;
+
     // GPIO settings
     GpioCtrlRegs.GPADIR.bit.GPIO23 = 1;
     GpioCtrlRegs.GPAAMSEL.bit.GPIO23 = 0;
@@ -40,14 +54,10 @@ int main(void)
     //GpioDataRegs.GPASET.bit.GPIO2 = 1;
 
     // Interrupts settings
-    PieVectTable.ADCA1_INT = &adca_prerusenie;
-    PieVectTable.ADCC1_INT = &adcc_prerusenie;
     PieVectTable.EPWM1_TZ_INT = &pwm1_TZ_interrupt;
-    PieCtrlRegs.PIEIER1.bit.INTx1 = 1;
-    PieCtrlRegs.PIEIER1.bit.INTx3 = 1;
     PieCtrlRegs.PIEIER2.bit.INTx1 = 1;
     PieCtrlRegs.PIECTRL.bit.ENPIE = 1;
-    IER = M_INT1 | M_INT2;
+    IER = M_INT2;
     EINT;
 
     // PWM, ADC and Comparator settings
@@ -55,6 +65,7 @@ int main(void)
     ADCA_Init();
     ADCC_Init();
     CMP4_Init();
+    DELAY_US(1000);
     ePWM1_Init();
 
     // PI regulators initialization
@@ -65,7 +76,8 @@ int main(void)
     EDIS;
 
     // Loop
-    while (1);
+    while (1)
+        ;
 }
 
 __interrupt void adca_prerusenie(void)
@@ -77,13 +89,6 @@ __interrupt void adca_prerusenie(void)
 }
 __interrupt void adcc_prerusenie(void)
 {
-    voltage_Vout_C3 = AdccResultRegs.ADCRESULT0 * ADC_LSB * K_fbVout;
-    voltage_Vin_C5 = AdccResultRegs.ADCRESULT1 * ADC_LSB * K_fbVin;
-
-    voltage_PIreg.meas = voltage_Vout_C3;
-    PIreg_Func(&voltage_PIreg);
-    EPwm1Regs.CMPA.bit.CMPA = voltage_PIreg.out;
-
     AdccRegs.ADCINTFLGCLR.bit.ADCINT1 = 1;
     PieCtrlRegs.PIEACK.bit.ACK1 = 1;
 }
