@@ -5,10 +5,6 @@
 #include <sharedData.h>
 #include <claTasks.h>
 
-// Constants for shunt resistors
-#define ADC_LSB 0.000805664f
-#define K_fbIl 2.2782f
-
 float32 current_L_A3 = 0.0;
 extern float32 Vin;
 extern float32 Vout;
@@ -36,7 +32,7 @@ int main(void)
     MemCfgRegs.LSxCLAPGM.bit.CLAPGM_LS0 = 1; // Sets RAMLS0 as RAM program for CLA
     MemCfgRegs.LSxCLAPGM.bit.CLAPGM_LS1 = 0;  // Sets RAMLS1 as RAM data for CLA
     MemCfgRegs.LSxCLAPGM.bit.CLAPGM_LS2 = 0;  // Sets RAMLS2 as RAM data for CLA
-#pragma diag_suppres 770    // Warnings elimination
+#pragma diag_suppress 770    // Warnings elimination
     Cla1Regs.MVECT1 = (uint16_t) &claTask1;
     Cla1Regs.MVECT8 = (uint16_t) &claTask8;
 #pragma diag_default 770

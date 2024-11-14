@@ -15,6 +15,7 @@
 #define K_fbVin 4.030903f
 #define K_fbVout 2.02977f
 #define K_fbVoutAlt 3.06122f
+#define K_fbIl 2.2782f
 
 typedef struct {
     // Outer/global variables
