@@ -14,6 +14,5 @@
 
 extern float32 Vout;
 extern float32 Vin;
-extern ts_PIreg;
 
 #endif /* SHAREDDATA_H_ */
