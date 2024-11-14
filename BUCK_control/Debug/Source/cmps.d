@@ -1,7 +1,7 @@
 # FIXED
 
 Source/cmps.obj: ../Source/cmps.c
-Source/cmps.obj: C:/ti/Workspace/BUCK_control/cmps.h
+Source/cmps.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/cmps.h
 Source/cmps.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_device.h
 Source/cmps.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/assert.h
 Source/cmps.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/_ti_config.h
@@ -69,7 +69,7 @@ Source/cmps.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/
 
 ../Source/cmps.c:
 
-C:/ti/Workspace/BUCK_control/cmps.h:
+E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/cmps.h:
 
 C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_device.h:
 

@@ -1,7 +1,7 @@
 # FIXED
 
 main.obj: ../main.c
-main.obj: C:/ti/Workspace/BUCK_control/timers.h
+main.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/timers.h
 main.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_device.h
 main.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/assert.h
 main.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/_ti_config.h
@@ -66,14 +66,14 @@ main.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/include
 main.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/include/f28004x_dma_defines.h
 main.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/include/f28004x_cla_defines.h
 main.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/include/f28004x_defaultisr.h
-main.obj: C:/ti/Workspace/BUCK_control/adcs.h
-main.obj: C:/ti/Workspace/BUCK_control/cmps.h
-main.obj: C:/ti/Workspace/BUCK_control/pwms.h
-main.obj: C:/ti/Workspace/BUCK_control/PI_reg.h
+main.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/adcs.h
+main.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/cmps.h
+main.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/pwms.h
+main.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/PI_reg.h
 
 ../main.c:
 
-C:/ti/Workspace/BUCK_control/timers.h:
+E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/timers.h:
 
 C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_device.h:
 
@@ -203,11 +203,11 @@ C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/include/f28004x_c
 
 C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/include/f28004x_defaultisr.h:
 
-C:/ti/Workspace/BUCK_control/adcs.h:
+E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/adcs.h:
 
-C:/ti/Workspace/BUCK_control/cmps.h:
+E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/cmps.h:
 
-C:/ti/Workspace/BUCK_control/pwms.h:
+E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/pwms.h:
 
-C:/ti/Workspace/BUCK_control/PI_reg.h:
+E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/PI_reg.h:
 

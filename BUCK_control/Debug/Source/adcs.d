@@ -1,7 +1,7 @@
 # FIXED
 
 Source/adcs.obj: ../Source/adcs.c
-Source/adcs.obj: C:/ti/Workspace/BUCK_control/adcs.h
+Source/adcs.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/adcs.h
 Source/adcs.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_device.h
 Source/adcs.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/assert.h
 Source/adcs.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/_ti_config.h
@@ -69,7 +69,7 @@ Source/adcs.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/
 
 ../Source/adcs.c:
 
-C:/ti/Workspace/BUCK_control/adcs.h:
+E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/adcs.h:
 
 C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_device.h:
 

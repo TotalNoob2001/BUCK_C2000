@@ -1,7 +1,7 @@
 # FIXED
 
 Source/PI_reg.obj: ../Source/PI_reg.c
-Source/PI_reg.obj: C:/ti/Workspace/BUCK_control/PI_reg.h
+Source/PI_reg.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/PI_reg.h
 Source/PI_reg.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_device.h
 Source/PI_reg.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/assert.h
 Source/PI_reg.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/_ti_config.h
@@ -69,7 +69,7 @@ Source/PI_reg.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/commo
 
 ../Source/PI_reg.c:
 
-C:/ti/Workspace/BUCK_control/PI_reg.h:
+E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/PI_reg.h:
 
 C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_device.h:
 

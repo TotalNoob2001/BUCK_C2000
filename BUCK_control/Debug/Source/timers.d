@@ -1,7 +1,7 @@
 # FIXED
 
 Source/timers.obj: ../Source/timers.c
-Source/timers.obj: C:/ti/Workspace/BUCK_control/timers.h
+Source/timers.obj: E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/timers.h
 Source/timers.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_device.h
 Source/timers.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/assert.h
 Source/timers.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/_ti_config.h
@@ -69,7 +69,7 @@ Source/timers.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/commo
 
 ../Source/timers.c:
 
-C:/ti/Workspace/BUCK_control/timers.h:
+E:/Dokumenty/GitHub/BUCK_C2000/BUCK_control/timers.h:
 
 C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_device.h:
 
