@@ -4,6 +4,13 @@
 #include <pwms.h>
 #include <sharedData.h>
 #include <claTasks.h>
+#include <SCI.h>
+
+char string0[] = { '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_',
+                   '_', '_', '_', '_', '_', '\0' };
+char string1[] = { 'O', 'L', 'A', ' ', 'A', 'M', 'I', 'G', 'O', '\n', '\0' };
+char string2[] = { 'K', 'o', 'm', 'e', 's', 't', 'a', 's', ' ', '?', '\n', '\n',
+                   '\0' };
 
 float32 current_L_A3 = 0.0;
 extern float32 Vin;
@@ -48,12 +55,18 @@ int main(void)
     GpioDataRegs.GPASET.bit.GPIO23 = 1;
     //GpioCtrlRegs.GPADIR.bit.GPIO2 = 1;
     //GpioDataRegs.GPASET.bit.GPIO2 = 1;
+    GpioCtrlRegs.GPAMUX2.bit.GPIO28 = 1;    //Rx
+    GpioCtrlRegs.GPAMUX2.bit.GPIO29 = 1;    //Tx
 
     // Interrupts settings
     PieVectTable.EPWM1_TZ_INT = &pwm1_TZ_interrupt;
+    PieVectTable.SCIA_RX_INT = &SCI_Rx_interrupt;
+    PieVectTable.SCIA_TX_INT = &SCI_Tx_interrupt;
     PieCtrlRegs.PIEIER2.bit.INTx1 = 1;
+    PieCtrlRegs.PIEIER9.bit.INTx1 = 1;
+    PieCtrlRegs.PIEIER9.bit.INTx2 = 1;
     PieCtrlRegs.PIECTRL.bit.ENPIE = 1;
-    IER = M_INT2;
+    IER = M_INT2 | M_INT9;
     EINT;
 
     // PWM, ADC and Comparator settings
@@ -61,6 +74,7 @@ int main(void)
     ADCA_Init();
     ADCC_Init();
     CMP4_Init();
+    SCI_Init();
     DELAY_US(1000);
     ePWM1_Init();
 
@@ -73,9 +87,12 @@ int main(void)
 
     // Loop
     while (1)
-        ;
+    {
+        SCI_SendString(string0);
+        //SCI_SendString_ISR(string1, &statusSCI);
+        DELAY_US(1000000);
+    }
 }
-
 __interrupt void adca_prerusenie(void)
 {
     current_L_A3 = AdcaResultRegs.ADCRESULT0 * ADC_LSB * K_fbIl;

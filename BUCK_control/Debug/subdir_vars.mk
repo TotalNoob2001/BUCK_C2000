@@ -12,35 +12,29 @@ CLA_SRCS += \
 ../claTasks.cla 
 
 C_SRCS += \
-../main.c \
-../sharedData.c 
+../main.c 
 
 CLA_DEPS += \
 ./claTasks.d 
 
 C_DEPS += \
-./main.d \
-./sharedData.d 
+./main.d 
 
 OBJS += \
 ./claTasks.obj \
-./main.obj \
-./sharedData.obj 
+./main.obj 
 
 OBJS__QUOTED += \
 "claTasks.obj" \
-"main.obj" \
-"sharedData.obj" 
+"main.obj" 
 
 C_DEPS__QUOTED += \
-"main.d" \
-"sharedData.d" 
+"main.d" 
 
 CLA_DEPS__QUOTED += \
 "claTasks.d" 
 
 C_SRCS__QUOTED += \
-"../main.c" \
-"../sharedData.c" 
+"../main.c" 
 
 
