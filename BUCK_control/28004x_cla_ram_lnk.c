@@ -1,5 +1,5 @@
 
-MEMORY
+MEMORY;
 {
 PAGE 0 :
    /* BEGIN is used for the "boot to SARAM" bootloader mode   */

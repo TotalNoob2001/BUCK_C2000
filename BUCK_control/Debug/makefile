@@ -4,15 +4,20 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS
+CG_TOOL_ROOT := C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./28004x_cla_ram_lnk.obj" \
+"./ClaTask.obj" \
 "./PIreg.obj" \
+"./Sci.obj" \
+"./ShareData.obj" \
 "./cmps.obj" \
 "./f28004x_adc.obj" \
+"./f28004x_codestartbranch.obj" \
 "./f28004x_defaultisr.obj" \
 "./f28004x_globalvariabledefs.obj" \
 "./f28004x_piectrl.obj" \
@@ -21,6 +26,7 @@ ORDERED_OBJS += \
 "./f28004x_usdelay.obj" \
 "./main.obj" \
 "../280049C_RAM_lnk.cmd" \
+"../28004x_cla_ram_lnk.cmd" \
 "../f28004x_headers_nonbios.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -130,43 +136,31 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-cv3.out \
+BUCK_github.out \
 
 EXE_OUTPUTS__QUOTED += \
-"cv3.out" \
-
-BIN_OUTPUTS += \
-cv3.hex \
-
-BIN_OUTPUTS__QUOTED += \
-"cv3.hex" \
+"BUCK_github.out" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "cv3.out"
+	@$(MAKE) --no-print-directory -Onone "BUCK_github.out"
 
 # Tool invocations
-cv3.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+BUCK_github.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla2 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu0 -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"cv3.map" --stack_size=0x200 --warn_sections -i"C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/lib" -i"C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="cv3_linkInfo.xml" --rom_model -o "cv3.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla2 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu0 -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"BUCK_github.map" --stack_size=0x200 --warn_sections -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/lib" -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="BUCK_github_linkInfo.xml" --rom_model -o "BUCK_github.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
-	@echo ' '
-
-cv3.hex: $(EXE_OUTPUTS)
-	@echo 'Building secondary target: "$@"'
-	@echo 'Invoking: C2000 Hex Utility'
-	"C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/bin/hex2000" --diag_wrap=off -o "cv3.hex" $(EXE_OUTPUTS__QUOTED)
-	@echo 'Finished building secondary target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "PIreg.obj" "cmps.obj" "f28004x_adc.obj" "f28004x_defaultisr.obj" "f28004x_globalvariabledefs.obj" "f28004x_piectrl.obj" "f28004x_pievect.obj" "f28004x_sysctrl.obj" "f28004x_usdelay.obj" "main.obj" 
-	-$(RM) "PIreg.d" "cmps.d" "f28004x_adc.d" "f28004x_defaultisr.d" "f28004x_globalvariabledefs.d" "f28004x_piectrl.d" "f28004x_pievect.d" "f28004x_sysctrl.d" "main.d" 
-	-$(RM) "f28004x_usdelay.d" 
+	-$(RM) $(EXE_OUTPUTS__QUOTED)
+	-$(RM) "28004x_cla_ram_lnk.obj" "ClaTask.obj" "PIreg.obj" "Sci.obj" "ShareData.obj" "cmps.obj" "f28004x_adc.obj" "f28004x_codestartbranch.obj" "f28004x_defaultisr.obj" "f28004x_globalvariabledefs.obj" "f28004x_piectrl.obj" "f28004x_pievect.obj" "f28004x_sysctrl.obj" "f28004x_usdelay.obj" "main.obj" 
+	-$(RM) "28004x_cla_ram_lnk.d" "ClaTask.d" "PIreg.d" "Sci.d" "ShareData.d" "cmps.d" "f28004x_adc.d" "f28004x_defaultisr.d" "f28004x_globalvariabledefs.d" "f28004x_piectrl.d" "f28004x_pievect.d" "f28004x_sysctrl.d" "main.d" 
+	-$(RM) "ClaTask.d" 
+	-$(RM) "f28004x_codestartbranch.d" "f28004x_usdelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

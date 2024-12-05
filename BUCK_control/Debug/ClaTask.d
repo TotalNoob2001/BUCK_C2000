@@ -1,20 +1,22 @@
 # FIXED
 
-ClaTask.obj: ../ClaTask.cla
+ClaTask.obj: ../ClaTask.c
 ClaTask.obj: ../ShareData.h
 ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_device.h
-ClaTask.obj: C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stdbool.h
-ClaTask.obj: C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/_ti_config.h
-ClaTask.obj: C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/linkage.h
-ClaTask.obj: C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stddef.h
-ClaTask.obj: C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stdint.h
-ClaTask.obj: C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/_stdint40.h
-ClaTask.obj: C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/sys/stdint.h
-ClaTask.obj: C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/sys/cdefs.h
-ClaTask.obj: C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/sys/_types.h
-ClaTask.obj: C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/machine/_types.h
-ClaTask.obj: C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/machine/_stdint.h
-ClaTask.obj: C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/sys/_stdint.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/assert.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/_ti_config.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/linkage.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/stdarg.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/sys/_types.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/sys/cdefs.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/machine/_types.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/stdbool.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/stddef.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/stdint.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/_stdint40.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/sys/stdint.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/machine/_stdint.h
+ClaTask.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/sys/_stdint.h
 ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_adc.h
 ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_analogsubsys.h
 ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_cla.h
@@ -50,6 +52,9 @@ ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/inc
 ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_sysctrl.h
 ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_xbar.h
 ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_xint.h
+ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_can.h
+ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_dcc.h
+ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_lin.h
 ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/include/f28004x_examples.h
 ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/include/f28004x_globalprototypes.h
 ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/include/f28004x_adc_defines.h
@@ -63,35 +68,39 @@ ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/incl
 ClaTask.obj: C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/include/f28004x_defaultisr.h
 ClaTask.obj: ../ClaTask.h
 
-../ClaTask.cla:
+../ClaTask.c:
 
 ../ShareData.h:
 
 C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_device.h:
 
-C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stdbool.h:
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/assert.h:
 
-C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/_ti_config.h:
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/_ti_config.h:
 
-C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/linkage.h:
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/linkage.h:
 
-C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stddef.h:
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/stdarg.h:
 
-C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stdint.h:
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/sys/_types.h:
 
-C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/_stdint40.h:
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/sys/cdefs.h:
 
-C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/sys/stdint.h:
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/machine/_types.h:
 
-C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/sys/cdefs.h:
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/stdbool.h:
 
-C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/sys/_types.h:
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/stddef.h:
 
-C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/machine/_types.h:
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/stdint.h:
 
-C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/machine/_stdint.h:
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/_stdint40.h:
 
-C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/sys/_stdint.h:
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/sys/stdint.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/machine/_stdint.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include/sys/_stdint.h:
 
 C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_adc.h:
 
@@ -162,6 +171,12 @@ C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_
 C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_xbar.h:
 
 C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_xint.h:
+
+C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_can.h:
+
+C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_dcc.h:
+
+C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/headers/include/f28004x_lin.h:
 
 C:/ti/c2000/C2000Ware_5_03_00_00/device_support/f28004x/common/include/f28004x_examples.h:
 
