@@ -1,10 +1,10 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.0                     
 ******************************************************************************
->> Linked Thu Nov 14 16:03:22 2024
+>> Linked Thu Dec  5 09:25:23 2024
 
 OUTPUT FILE NAME:   <BUCK_github.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00009d00
+ENTRY POINT SYMBOL: "_c_int00"  address: 00009cfd
 
 
 MEMORY CONFIGURATION
@@ -15,7 +15,7 @@ PAGE 0:
   BEGIN                 00000000   00000002  00000002  00000000  RWIX
   RAMM0                 000000f6   0000030a  00000021  000002e9  RWIX
   RAMLS0                00008000   00000800  000001e2  0000061e  RWIX
-  RAMLS3                00009800   00000800  0000064b  000001b5  RWIX
+  RAMLS3                00009800   00000800  00000648  000001b8  RWIX
   RAMLS4                0000a000   00000800  00000000  00000800  RWIX
   RAMLS7                0000b800   00000800  00000000  00000800  RWIX
   FLASH_BANK0_SEC0      00080000   00001000  00000000  00001000  RWIX
@@ -694,25 +694,25 @@ Cla1ToCpuMsgRAM
 *          1    00001480    00000020     UNINITIALIZED
                   00001480    00000020     sharedData.obj (Cla1ToCpuMsgRAM)
 
-.text      0    00009800    0000064b     
+.text      0    00009800    00000648     
                   00009800    000002db     f28004x_sysctrl.obj (.text)
                   00009adb    0000007d     pwms.obj (.text)
-                  00009b58    00000079     main.obj (.text)
-                  00009bd1    00000069     adcs.obj (.text)
-                  00009c3a    00000067     f28004x_adc.obj (.text)
-                  00009ca1    0000005f     main.obj (.text:retain)
-                  00009d00    00000056     rts2800_fpu32.lib : boot28.asm.obj (.text)
-                  00009d56    0000002b     cmps.obj (.text)
-                  00009d81    00000029     rts2800_fpu32.lib : exit.c.obj (.text)
-                  00009daa    00000028     f28004x_piectrl.obj (.text)
-                  00009dd2    00000024     rts2800_fpu32.lib : cpy_tbl.c.obj (.text)
-                  00009df6    0000001d                       : memcpy.c.obj (.text)
-                  00009e13    00000012                       : args_main.c.obj (.text)
-                  00009e25    00000012     timers.obj (.text)
-                  00009e37    00000009     rts2800_fpu32.lib : _lock.c.obj (.text)
-                  00009e40    00000008     f28004x_codestartbranch.obj (.text)
-                  00009e48    00000002     rts2800_fpu32.lib : pre_init.c.obj (.text)
-                  00009e4a    00000001                       : startup.c.obj (.text)
+                  00009b58    00000076     main.obj (.text)
+                  00009bce    00000069     adcs.obj (.text)
+                  00009c37    00000067     f28004x_adc.obj (.text)
+                  00009c9e    0000005f     main.obj (.text:retain)
+                  00009cfd    00000056     rts2800_fpu32.lib : boot28.asm.obj (.text)
+                  00009d53    0000002b     cmps.obj (.text)
+                  00009d7e    00000029     rts2800_fpu32.lib : exit.c.obj (.text)
+                  00009da7    00000028     f28004x_piectrl.obj (.text)
+                  00009dcf    00000024     rts2800_fpu32.lib : cpy_tbl.c.obj (.text)
+                  00009df3    0000001d                       : memcpy.c.obj (.text)
+                  00009e10    00000012                       : args_main.c.obj (.text)
+                  00009e22    00000012     timers.obj (.text)
+                  00009e34    00000009     rts2800_fpu32.lib : _lock.c.obj (.text)
+                  00009e3d    00000008     f28004x_codestartbranch.obj (.text)
+                  00009e45    00000002     rts2800_fpu32.lib : pre_init.c.obj (.text)
+                  00009e47    00000001                       : startup.c.obj (.text)
 
 .ebss      1    0000a800    0000000c     UNINITIALIZED
                   0000a800    00000006     rts2800_fpu32.lib : exit.c.obj (.ebss)
@@ -726,10 +726,10 @@ MODULE SUMMARY
        ------                           ----   ----------------   ------------------
     .\
        claTasks.obj                     482    0                  12                
-       main.obj                         216    5                  2                 
+       main.obj                         213    5                  2                 
        sharedData.obj                   0      0                  32                
     +--+--------------------------------+------+------------------+--------------------+
-       Total:                           698    5                  46                
+       Total:                           695    5                  46                
                                                                                     
     .\Device\
        f28004x_globalvariabledefs.obj   0      0                  9857              
@@ -762,7 +762,7 @@ MODULE SUMMARY
        Total:                           222    24                 10                
                                                                                     
     +--+--------------------------------+------+------------------+--------------------+
-       Grand Total:                     2099   29                 9913              
+       Grand Total:                     2096   29                 9913              
 
 
 GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
@@ -989,9 +989,9 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 page  address   name                            
 ----  -------   ----                            
 abs   ffffffff  .text                           
-0     00009d81  C$$EXIT                         
-0     00009bd1  _ADCA_Init                      
-0     00009bfc  _ADCC_Init                      
+0     00009d7e  C$$EXIT                         
+0     00009bce  _ADCA_Init                      
+0     00009bf9  _ADCC_Init                      
 1     0005f4c0  _AccessProtectionRegs           
 1     00007400  _AdcaRegs                       
 1     00000b00  _AdcaResultRegs                 
@@ -1001,7 +1001,7 @@ abs   ffffffff  .text
 1     00000b40  _AdccResultRegs                 
 1     0005d700  _AnalogSubsysRegs               
 1     00007a40  _CLBXbarRegs                    
-0     00009d56  _CMP4_Init                      
+0     00009d53  _CMP4_Init                      
 1     00048000  _CanaRegs                       
 1     0004a000  _CanbRegs                       
 1     00001400  _Cla1Regs                       
@@ -1062,7 +1062,7 @@ abs   ffffffff  .text
 1     00007a00  _EPwmXbarRegs                   
 1     00005100  _EQep1Regs                      
 1     00005140  _EQep2Regs                      
-0     00009dc9  _EnableInterrupts               
+0     00009dc6  _EnableInterrupts               
 1     0005e980  _EradCounter1Regs               
 1     0005e990  _EradCounter2Regs               
 1     0005e9a0  _EradCounter3Regs               
@@ -1089,7 +1089,7 @@ abs   ffffffff  .text
 1     00007300  _I2caRegs                       
 0     00009a13  _IDLE                           
 0     0000980e  _InitPeripheralClocks           
-0     00009daa  _InitPieCtrl                    
+0     00009da7  _InitPieCtrl                    
 0     00009800  _InitSysCtrl                    
 0     000098b8  _InitSysPll                     
 1     00007900  _InputXbarRegs                  
@@ -1115,7 +1115,7 @@ abs   ffffffff  .text
 1     00007210  _ScibRegs                       
 1     00005e00  _Sdfm1Regs                      
 0     0000989e  _ServiceDog                     
-0     00009c3a  _SetVREF                        
+0     00009c37  _SetVREF                        
 1     00006100  _SpiaRegs                       
 1     00006110  _SpibRegs                       
 1     00007940  _SyncSocRegs                    
@@ -1124,7 +1124,7 @@ abs   ffffffff  .text
 1     0005d500  _SysPeriphAcRegs                
 0     000099fe  _SysXtalOscSESel                
 0     000099de  _SysXtalOscSel                  
-0     00009e25  _Timer0_Init                    
+0     00009e22  _Timer0_Init                    
 1     00001482  _Vin                            
 1     00001480  _Vout                           
 1     00007000  _WdRegs                         
@@ -1144,29 +1144,29 @@ abs   ffffffff  ___c_args__
 abs   ffffffff  ___etext__                      
 abs   ffffffff  ___pinit__                      
 abs   ffffffff  ___text__                       
-0     00009e13  __args_main                     
+0     00009e10  __args_main                     
 1     00008800  __cla_PIreg_Init_sp             
 1     0000a806  __lock                          
-0     00009e3f  __nop                           
-0     00009e3b  __register_lock                 
-0     00009e37  __register_unlock               
+0     00009e3c  __nop                           
+0     00009e38  __register_lock                 
+0     00009e34  __register_unlock               
 1     00000400  __stack                         
-0     00009e4a  __system_post_cinit             
-0     00009e48  __system_pre_init               
+0     00009e47  __system_post_cinit             
+0     00009e45  __system_pre_init               
 1     0000a808  __unlock                        
-0     00009d81  _abort                          
-0     00009ca1  _adca_prerusenie                
-0     00009cd6  _adcc_prerusenie                
-0     00009d00  _c_int00                        
+0     00009d7e  _abort                          
+0     00009c9e  _adca_prerusenie                
+0     00009cd3  _adcc_prerusenie                
+0     00009cfd  _c_int00                        
 0     00008178  _claTask1                       
 0     000081b4  _claTask8                       
-0     00009dd2  _copy_in                        
+0     00009dcf  _copy_in                        
 1     0000a80a  _current_L_A3                   
 0     00009adb  _ePWM1_Init                     
-0     00009d83  _exit                           
+0     00009d80  _exit                           
 0     00009b58  _main                           
-0     00009df6  _memcpy                         
-0     00009ceb  _pwm1_TZ_interrupt              
+0     00009df3  _memcpy                         
+0     00009ce8  _pwm1_TZ_interrupt              
 1     00001484  _voltage_PIreg                  
 abs   ffffffff  binit                           
 0     000000f6  cinit                           
@@ -1203,28 +1203,28 @@ page  address   name
 0     00009a2d  _IsPLLValid                     
 0     00009adb  _ePWM1_Init                     
 0     00009b58  _main                           
-0     00009bd1  _ADCA_Init                      
-0     00009bfc  _ADCC_Init                      
-0     00009c3a  _SetVREF                        
-0     00009ca1  _adca_prerusenie                
-0     00009cd6  _adcc_prerusenie                
-0     00009ceb  _pwm1_TZ_interrupt              
-0     00009d00  _c_int00                        
-0     00009d56  _CMP4_Init                      
-0     00009d81  C$$EXIT                         
-0     00009d81  _abort                          
-0     00009d83  _exit                           
-0     00009daa  _InitPieCtrl                    
-0     00009dc9  _EnableInterrupts               
-0     00009dd2  _copy_in                        
-0     00009df6  _memcpy                         
-0     00009e13  __args_main                     
-0     00009e25  _Timer0_Init                    
-0     00009e37  __register_unlock               
-0     00009e3b  __register_lock                 
-0     00009e3f  __nop                           
-0     00009e48  __system_pre_init               
-0     00009e4a  __system_post_cinit             
+0     00009bce  _ADCA_Init                      
+0     00009bf9  _ADCC_Init                      
+0     00009c37  _SetVREF                        
+0     00009c9e  _adca_prerusenie                
+0     00009cd3  _adcc_prerusenie                
+0     00009ce8  _pwm1_TZ_interrupt              
+0     00009cfd  _c_int00                        
+0     00009d53  _CMP4_Init                      
+0     00009d7e  C$$EXIT                         
+0     00009d7e  _abort                          
+0     00009d80  _exit                           
+0     00009da7  _InitPieCtrl                    
+0     00009dc6  _EnableInterrupts               
+0     00009dcf  _copy_in                        
+0     00009df3  _memcpy                         
+0     00009e10  __args_main                     
+0     00009e22  _Timer0_Init                    
+0     00009e34  __register_unlock               
+0     00009e38  __register_lock                 
+0     00009e3c  __nop                           
+0     00009e45  __system_pre_init               
+0     00009e47  __system_post_cinit             
 1     00000400  __STACK_END                     
 1     00000400  __stack                         
 1     00000b00  _AdcaResultRegs                 
