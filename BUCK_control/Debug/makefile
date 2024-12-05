@@ -4,29 +4,24 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS
+CG_TOOL_ROOT := C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./claTasks.obj" \
+"./PIreg.obj" \
+"./cmps.obj" \
+"./f28004x_adc.obj" \
+"./f28004x_defaultisr.obj" \
+"./f28004x_globalvariabledefs.obj" \
+"./f28004x_piectrl.obj" \
+"./f28004x_pievect.obj" \
+"./f28004x_sysctrl.obj" \
+"./f28004x_usdelay.obj" \
 "./main.obj" \
-"./Device/f28004x_adc.obj" \
-"./Device/f28004x_codestartbranch.obj" \
-"./Device/f28004x_globalvariabledefs.obj" \
-"./Device/f28004x_piectrl.obj" \
-"./Device/f28004x_pievect.obj" \
-"./Device/f28004x_sysctrl.obj" \
-"./Device/f28004x_usdelay.obj" \
-"./Source/SCI.obj" \
-"./Source/adcs.obj" \
-"./Source/cmps.obj" \
-"./Source/pwms.obj" \
-"./Source/sharedData.obj" \
-"./Source/timers.obj" \
+"../280049C_RAM_lnk.cmd" \
 "../f28004x_headers_nonbios.cmd" \
-"../Device/28004x_cla_ram_lnk.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
 
@@ -38,11 +33,7 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
--include Device/subdir_vars.mk
--include Source/subdir_vars.mk
 -include subdir_rules.mk
--include Device/subdir_rules.mk
--include Source/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -139,31 +130,43 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-BUCK_github.out \
+cv3.out \
 
 EXE_OUTPUTS__QUOTED += \
-"BUCK_github.out" \
+"cv3.out" \
+
+BIN_OUTPUTS += \
+cv3.hex \
+
+BIN_OUTPUTS__QUOTED += \
+"cv3.hex" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "BUCK_github.out"
+	@$(MAKE) --no-print-directory -Onone "cv3.out"
 
 # Tool invocations
-BUCK_github.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+cv3.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla2 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu0 -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"BUCK_github.map" --heap_size=0 --stack_size=0 --warn_sections -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/lib" -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="BUCK_github_linkInfo.xml" -o "BUCK_github.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla2 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu0 -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"cv3.map" --stack_size=0x200 --warn_sections -i"C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/lib" -i"C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="cv3_linkInfo.xml" --rom_model -o "cv3.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
+	@echo ' '
+
+cv3.hex: $(EXE_OUTPUTS)
+	@echo 'Building secondary target: "$@"'
+	@echo 'Invoking: C2000 Hex Utility'
+	"C:/ti/ccs1210/ccs/tools/compiler/ti-cgt-c2000_22.6.0.LTS/bin/hex2000" --diag_wrap=off -o "cv3.hex" $(EXE_OUTPUTS__QUOTED)
+	@echo 'Finished building secondary target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "claTasks.obj" "main.obj" "Device\f28004x_adc.obj" "Device\f28004x_codestartbranch.obj" "Device\f28004x_globalvariabledefs.obj" "Device\f28004x_piectrl.obj" "Device\f28004x_pievect.obj" "Device\f28004x_sysctrl.obj" "Device\f28004x_usdelay.obj" "Source\SCI.obj" "Source\adcs.obj" "Source\cmps.obj" "Source\pwms.obj" "Source\sharedData.obj" "Source\timers.obj" 
-	-$(RM) "main.d" "Device\f28004x_adc.d" "Device\f28004x_globalvariabledefs.d" "Device\f28004x_piectrl.d" "Device\f28004x_pievect.d" "Device\f28004x_sysctrl.d" "Source\SCI.d" "Source\adcs.d" "Source\cmps.d" "Source\pwms.d" "Source\sharedData.d" "Source\timers.d" 
-	-$(RM) "claTasks.d" 
-	-$(RM) "Device\f28004x_codestartbranch.d" "Device\f28004x_usdelay.d" 
+	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
+	-$(RM) "PIreg.obj" "cmps.obj" "f28004x_adc.obj" "f28004x_defaultisr.obj" "f28004x_globalvariabledefs.obj" "f28004x_piectrl.obj" "f28004x_pievect.obj" "f28004x_sysctrl.obj" "f28004x_usdelay.obj" "main.obj" 
+	-$(RM) "PIreg.d" "cmps.d" "f28004x_adc.d" "f28004x_defaultisr.d" "f28004x_globalvariabledefs.d" "f28004x_piectrl.d" "f28004x_pievect.d" "f28004x_sysctrl.d" "main.d" 
+	-$(RM) "f28004x_usdelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

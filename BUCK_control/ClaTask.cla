@@ -1,0 +1,116 @@
+/*
+ * ClaTask.cla
+ *
+ *  Created on: 13. 11. 2024
+ *      Author: Juraj
+ */
+
+#include "ShareData.h"
+
+
+unsigned int meranieC3;
+unsigned int meranieC5;
+
+void PIregFunc(tsPIreg *reg)
+{
+    // Vypocet regulacnej odchylky
+    reg->e[0] = reg->ref - reg->meas;
+
+    // Vypocet proporcionalnej zlozky
+    reg->up = reg->Kp * reg->e[0];
+
+    // Vypocet integracnej zlozky
+    reg->ui[0] = (reg->e[0]+reg->e[1])*reg->Ki*reg->w + reg->ui[1];
+
+    // Vypocet akcnej veliciny
+    reg->u = reg->up + reg->ui[0];
+
+    // Posunutie vzoriek o 1
+    reg->e[1] = reg->e[0];
+    reg->ui[1] = reg->ui[0];
+
+    // Vystupne obmedzenie
+
+   // reg->out = __fsat(reg->u , reg->Umax , reg->Umin);
+
+    if(reg->u > reg->Umax)
+    {
+        reg->out = reg->Umax;
+    }
+    else
+    {
+        if(reg->u < reg->Umin)
+        {
+            reg->out = reg->Umin;
+        }
+        else
+        {
+            reg->out = reg->u;
+        }
+    }
+
+    // Anti windup algoritmus
+    if(reg->u == reg->out)
+    {
+        // vystup regulatora NIE JE saturovany
+        reg->w = 1.0;
+    }
+    else
+    {
+        // vystupe regulatora JE saturovany
+        reg->w = 0.0;
+    }
+
+}
+
+
+void PIregInit(tsPIreg *reg, float32 Kp, float32 Ki, float32 max, float32 min)
+{
+    reg->Umax = max;
+    reg->Umin = min;
+    reg->Kp = Kp;
+    reg->Ki = Ki;
+
+    reg->w = 1.0;
+    reg->e[1] = 0;
+    reg->ui[1] = 0;
+}
+
+// Definicie CLA Taskov
+
+// ClaTask1
+__interrupt void ClaTask1(void)
+{
+    meranieC3 = AdccResultRegs.ADCRESULT0;
+    meranieC5 = AdccResultRegs.ADCRESULT1;
+
+    Vout = K_fbVoutAlt * ADC_lsb * ((float32) meranieC3);
+   // Vin = K_fbVin * ADC_lsb ((float32) meranieC5);
+
+
+    PIregulatorNapatia.meas = Vout;
+    PIregFunc(&PIregulatorNapatia);
+
+    EPwm1Regs.CMPA.bit.CMPA = PIregulatorNapatia.out;
+  //  EPwm1Regs.CMPA.bit.CMPA = 60;
+
+
+}
+
+// ClaTask2
+// ClaTask3
+// ClaTask4
+// ClaTask5
+// ClaTask6
+// ClaTask7
+// ClaTask8
+__interrupt void ClaTask8(void)
+{
+    PIregInit(&PIregulatorNapatia, 101, 3.01, 124, 1.1);
+    PIregulatorNapatia.ref=1.65;
+    __mdebugstop(); // softverovy breakpoint pre CLA jadro
+
+
+}
+
+
