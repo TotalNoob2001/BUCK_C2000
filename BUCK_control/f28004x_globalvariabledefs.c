@@ -933,12 +933,12 @@ volatile struct SPI_REGS SpibRegs;
 volatile struct SYNC_SOC_REGS SyncSocRegs;
 
 //----------------------------------------
-#ifdef __cplusplus
+/*#ifdef __cplusplus
 #pragma DATA_SECTION("UidRegsFile")
 #else
 #pragma DATA_SECTION(UidRegs,"UidRegsFile");
 #endif
-volatile struct UID_REGS UidRegs;
+volatile struct UID_REGS UidRegs;*/
 
 //----------------------------------------
 #ifdef __cplusplus
