@@ -37,10 +37,7 @@ Uint16 data;
 Uint16 pocetTxZnakov;
 
 
-char string1[] = {'N','A','Z','D','A','R',' ','\0'};
-char string2[] = {'C','A','U',' ','\0'};
-char string3[] = {'T','e','x','a','s',' ','I','n','s','t','r','u','m','e','n','t','s','\0'};
-
+char string1[] = {'N','A','Z','D','A','R','\t','\0'};
 
 
 
@@ -106,6 +103,7 @@ int main(void)
     GpioCtrlRegs.GPADIR.bit.GPIO23 = 1;  // nastavi GPIO23 ako vystup
     GpioCtrlRegs.GPAAMSEL.bit.GPIO23 = 0;
     GpioDataRegs.GPASET.bit.GPIO23 = 1;
+    GpioCtrlRegs.GPBDIR.bit.GPIO34 = 1;
   //  GpioCtrlRegs.GPADIR.bit.GPIO2 = 1;  // nastavi GPIO2 ako vystup pre rezistor R=2;
   //  GpioDataRegs.GPASET.bit.GPIO2 = 1;
 
@@ -126,14 +124,8 @@ int main(void)
 
     while(1)
     {
-        Sci_SendString(string1);
-        DELAY_US(1000000);
-        Sci_SendString_ISR(string3, &stavSci);
-        DELAY_US(1000000);
+
     }
-
-
-	return 0;
 }
 
 void ePWM1_Init(void)
