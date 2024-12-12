@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.0                     
 ******************************************************************************
->> Linked Thu Dec 12 16:16:41 2024
+>> Linked Thu Dec 12 16:28:30 2024
 
 OUTPUT FILE NAME:   <cv3.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 0000a25d
@@ -213,10 +213,10 @@ codestart
 .pinit     0    000000f6    00000000     UNINITIALIZED
 
 Cla1Prog   0    00008000    000001e2     
-                  00008000    00000106     ClaTasks.obj (Cla1Prog:_PIregFunc)
-                  00008106    00000074     ClaTasks.obj (Cla1Prog:_PIregInit)
-                  0000817a    00000038     ClaTasks.obj (Cla1Prog:_ClaTask1)
-                  000081b2    00000030     ClaTasks.obj (Cla1Prog:_ClaTask8)
+                  00008000    00000106     claTasks.obj (Cla1Prog:_PIregFunc)
+                  00008106    00000074     claTasks.obj (Cla1Prog:_PIregInit)
+                  0000817a    00000038     claTasks.obj (Cla1Prog:_ClaTask1)
+                  000081b2    00000030     claTasks.obj (Cla1Prog:_ClaTask8)
 
 AdcaResultRegsFile 
 *          1    00000b00    00000018     UNINITIALIZED
@@ -256,15 +256,15 @@ Cla1RegsFile
 
 .scratchpad 
 *          1    00008800    0000000a     UNINITIALIZED
-                  00008800    00000002     ClaTasks.obj (.scratchpad:Cla1Prog:_PIregFunc)
-                  00008800    0000000a     ClaTasks.obj (.scratchpad:Cla1Prog:_PIregInit)
+                  00008800    00000002     claTasks.obj (.scratchpad:Cla1Prog:_PIregFunc)
+                  00008800    0000000a     claTasks.obj (.scratchpad:Cla1Prog:_PIregInit)
 
 .bss_cla   1    0000880a    00000004     UNINITIALIZED
-                  0000880a    00000004     ClaTasks.obj (.bss_cla)
+                  0000880a    00000004     claTasks.obj (.bss_cla)
 
 Cla1ToCpuMsgRAM 
 *          1    00001480    00000020     UNINITIALIZED
-                  00001480    00000020     SharedData.obj (Cla1ToCpuMsgRAM)
+                  00001480    00000020     sharedData.obj (Cla1ToCpuMsgRAM)
 
 PieVectTableFile 
 *          1    00000d00    000001c0     UNINITIALIZED
@@ -740,13 +740,13 @@ MODULE SUMMARY
        f28004x_globalvariabledefs.obj   0      0                  9857              
        f28004x_defaultisr.obj           1203   0                  0                 
        f28004x_sysctrl.obj              742    0                  0                 
-       ClaTasks.obj                     482    0                  16                
+       claTasks.obj                     482    0                  16                
        main.obj                         455    5                  6                 
        Sci.obj                          225    12                 9                 
        f28004x_adc.obj                  104    0                  0                 
        cmps.obj                         44     0                  0                 
        f28004x_piectrl.obj              40     0                  0                 
-       SharedData.obj                   0      0                  32                
+       sharedData.obj                   0      0                  32                
        f28004x_codestartbranch.obj      10     0                  0                 
        f28004x_usdelay.obj              4      0                  0                 
     +--+--------------------------------+------+------------------+--------------------+

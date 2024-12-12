@@ -17,6 +17,7 @@ __interrupt void Sci_Rx_prerusenie(void)
 	rxBuffer[2] = rxBuffer[1];
 	rxBuffer[1] = rxBuffer[0];
 	rxBuffer[0] = SciaRegs.SCIRXBUF.bit.SAR;
+	Sci_SendString(rxBuffer);
 	if (rxBuffer[2] == 'z' && rxBuffer[1] == 'a' && rxBuffer[0] == 'p')
 		GpioDataRegs.GPBCLEAR.bit.GPIO34 = 1;
 

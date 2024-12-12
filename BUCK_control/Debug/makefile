@@ -10,9 +10,8 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./ClaTasks.obj" \
 "./Sci.obj" \
-"./SharedData.obj" \
+"./claTasks.obj" \
 "./cmps.obj" \
 "./f28004x_adc.obj" \
 "./f28004x_codestartbranch.obj" \
@@ -23,6 +22,7 @@ ORDERED_OBJS += \
 "./f28004x_sysctrl.obj" \
 "./f28004x_usdelay.obj" \
 "./main.obj" \
+"./sharedData.obj" \
 "../28004x_cla_ram_lnk.cmd" \
 "../f28004x_headers_nonbios.cmd" \
 $(GEN_CMDS__FLAG) \
@@ -154,9 +154,9 @@ cv3.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "ClaTasks.obj" "Sci.obj" "SharedData.obj" "cmps.obj" "f28004x_adc.obj" "f28004x_codestartbranch.obj" "f28004x_defaultisr.obj" "f28004x_globalvariabledefs.obj" "f28004x_piectrl.obj" "f28004x_pievect.obj" "f28004x_sysctrl.obj" "f28004x_usdelay.obj" "main.obj" 
-	-$(RM) "Sci.d" "SharedData.d" "cmps.d" "f28004x_adc.d" "f28004x_defaultisr.d" "f28004x_globalvariabledefs.d" "f28004x_piectrl.d" "f28004x_pievect.d" "f28004x_sysctrl.d" "main.d" 
-	-$(RM) "ClaTasks.d" 
+	-$(RM) "Sci.obj" "claTasks.obj" "cmps.obj" "f28004x_adc.obj" "f28004x_codestartbranch.obj" "f28004x_defaultisr.obj" "f28004x_globalvariabledefs.obj" "f28004x_piectrl.obj" "f28004x_pievect.obj" "f28004x_sysctrl.obj" "f28004x_usdelay.obj" "main.obj" "sharedData.obj" 
+	-$(RM) "Sci.d" "cmps.d" "f28004x_adc.d" "f28004x_defaultisr.d" "f28004x_globalvariabledefs.d" "f28004x_piectrl.d" "f28004x_pievect.d" "f28004x_sysctrl.d" "main.d" "sharedData.d" 
+	-$(RM) "claTasks.d" 
 	-$(RM) "f28004x_codestartbranch.d" "f28004x_usdelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
