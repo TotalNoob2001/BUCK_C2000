@@ -10,7 +10,7 @@ CMD_SRCS += \
 ../f28004x_headers_nonbios.cmd 
 
 CLA_SRCS += \
-../ClaTasks.cla 
+../claTasks.cla 
 
 ASM_SRCS += \
 ../f28004x_codestartbranch.asm \
@@ -18,7 +18,6 @@ ASM_SRCS += \
 
 C_SRCS += \
 ../Sci.c \
-../SharedData.c \
 ../cmps.c \
 ../f28004x_adc.c \
 ../f28004x_defaultisr.c \
@@ -26,14 +25,14 @@ C_SRCS += \
 ../f28004x_piectrl.c \
 ../f28004x_pievect.c \
 ../f28004x_sysctrl.c \
-../main.c 
+../main.c \
+../sharedData.c 
 
 CLA_DEPS += \
-./ClaTasks.d 
+./claTasks.d 
 
 C_DEPS += \
 ./Sci.d \
-./SharedData.d \
 ./cmps.d \
 ./f28004x_adc.d \
 ./f28004x_defaultisr.d \
@@ -41,12 +40,12 @@ C_DEPS += \
 ./f28004x_piectrl.d \
 ./f28004x_pievect.d \
 ./f28004x_sysctrl.d \
-./main.d 
+./main.d \
+./sharedData.d 
 
 OBJS += \
-./ClaTasks.obj \
 ./Sci.obj \
-./SharedData.obj \
+./claTasks.obj \
 ./cmps.obj \
 ./f28004x_adc.obj \
 ./f28004x_codestartbranch.obj \
@@ -56,16 +55,16 @@ OBJS += \
 ./f28004x_pievect.obj \
 ./f28004x_sysctrl.obj \
 ./f28004x_usdelay.obj \
-./main.obj 
+./main.obj \
+./sharedData.obj 
 
 ASM_DEPS += \
 ./f28004x_codestartbranch.d \
 ./f28004x_usdelay.d 
 
 OBJS__QUOTED += \
-"ClaTasks.obj" \
 "Sci.obj" \
-"SharedData.obj" \
+"claTasks.obj" \
 "cmps.obj" \
 "f28004x_adc.obj" \
 "f28004x_codestartbranch.obj" \
@@ -75,11 +74,11 @@ OBJS__QUOTED += \
 "f28004x_pievect.obj" \
 "f28004x_sysctrl.obj" \
 "f28004x_usdelay.obj" \
-"main.obj" 
+"main.obj" \
+"sharedData.obj" 
 
 C_DEPS__QUOTED += \
 "Sci.d" \
-"SharedData.d" \
 "cmps.d" \
 "f28004x_adc.d" \
 "f28004x_defaultisr.d" \
@@ -87,10 +86,11 @@ C_DEPS__QUOTED += \
 "f28004x_piectrl.d" \
 "f28004x_pievect.d" \
 "f28004x_sysctrl.d" \
-"main.d" 
+"main.d" \
+"sharedData.d" 
 
 CLA_DEPS__QUOTED += \
-"ClaTasks.d" 
+"claTasks.d" 
 
 ASM_DEPS__QUOTED += \
 "f28004x_codestartbranch.d" \
@@ -98,7 +98,6 @@ ASM_DEPS__QUOTED += \
 
 C_SRCS__QUOTED += \
 "../Sci.c" \
-"../SharedData.c" \
 "../cmps.c" \
 "../f28004x_adc.c" \
 "../f28004x_defaultisr.c" \
@@ -106,7 +105,8 @@ C_SRCS__QUOTED += \
 "../f28004x_piectrl.c" \
 "../f28004x_pievect.c" \
 "../f28004x_sysctrl.c" \
-"../main.c" 
+"../main.c" \
+"../sharedData.c" 
 
 ASM_SRCS__QUOTED += \
 "../f28004x_codestartbranch.asm" \

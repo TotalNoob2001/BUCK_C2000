@@ -131,9 +131,6 @@ int main(void)
         Sci_SendString_ISR(string3, &stavSci);
         DELAY_US(1000000);
     }
-
-
-	return 0;
 }
 
 void ePWM1_Init(void)

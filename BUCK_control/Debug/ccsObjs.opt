@@ -1,6 +1,5 @@
-"./ClaTasks.obj"
 "./Sci.obj"
-"./SharedData.obj"
+"./claTasks.obj"
 "./cmps.obj"
 "./f28004x_adc.obj"
 "./f28004x_codestartbranch.obj"
@@ -11,6 +10,7 @@
 "./f28004x_sysctrl.obj"
 "./f28004x_usdelay.obj"
 "./main.obj"
+"./sharedData.obj"
 "../28004x_cla_ram_lnk.cmd"
 "../f28004x_headers_nonbios.cmd"
 -llibc.a
