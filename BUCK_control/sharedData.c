@@ -1,11 +1,11 @@
 /*
- * sharedData.c
+ * SharedData.c
  *
- *  Created on: 14 Nov 2024
- *      Author: Erik
+ *  Created on: 14. 11. 2024
+ *      Author: admin
  */
 
-#include <sharedData.h>
+#include "SharedData.h"
 
 #pragma DATA_SECTION(Vout, "Cla1ToCpuMsgRAM");
 float32 Vout;
@@ -13,5 +13,7 @@ float32 Vout;
 #pragma DATA_SECTION(Vin, "Cla1ToCpuMsgRAM");
 float32 Vin;
 
-#pragma DATA_SECTION(voltage_PIreg, "Cla1ToCpuMsgRAM");
-ts_PIreg voltage_PIreg;
+#pragma DATA_SECTION(PIregulatorNapatia, "Cla1ToCpuMsgRAM");
+tsPIreg PIregulatorNapatia;
+
+
